@@ -1,1 +1,237 @@
-<!DOCTYPE html>\n<html lang="es">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Document</title>\n    <link rel="stylesheet" href="style.css">\n</head>\n<body>\n    <header>\n        <h1>Título de la Página</h1>\n    </header>\n    <main>\n        <section class="steps-section">\n            <div class="warning-box">\n                <strong>Advertencia:</strong> Siga estos pasos cuidadosamente para completar el proceso.\n            </div>\n            <ol>\n                <li>Realice la verificación de su información.</li>\n                <li>Confirme que todos los campos estén completos.</li>\n                <li>Haga clic en el botón "Enviar" una vez que todo esté correcto.</li>\n            </ol>\n        </section>\n        <button id="cta-button">Enviar</button>\n    </main>\n    <footer>\n        <p>© 2026</p>\n    </footer>\n</body>\n</html>\n
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Padiuxi – Beta testers</title>
+  <meta name="description" content="Padiuxi es una app móvil para preservar y difundir las lenguas indígenas. Únete como beta tester y accede antes que nadie." />
+  <meta name="theme-color" content="#FF6392" />
+  <meta property="og:title" content="Padiuxi – Beta testers" />
+  <meta property="og:description" content="Aprende zapoteco del Istmo de Tehuantepec. Únete a la beta pública en Android." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="data:image/png;base64,mpCbZs3simDevZc8Yp7D71JDZv2szOk7ezafMsvXKM6ZkpxsfHiCHiO4WQnkLCeUM1GJJSxJlAqIZYaiyJEIZ4Z6mGAwxCSqqqgXh+Wkuqaqz3xGFFcgZfFIRKN5Z9IRzkFPFlQVUNcb4[...]" />
+  <style>
+    :root{
+      --rose:#FF6392;
+      --rose-strong:#E45785;
+      --rose-dark:#CC3D73;
+      --navy:#0D1B2A;
+      --text:#0D3B66;
+      --muted:#64748b;
+      --bg:#F9F9F9;
+      --white:#FFFFFF;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(60% 60% at 10% 10%, rgba(255,99,146,0.15) 0%, rgba(255,99,146,0) 100%),
+        radial-gradient(60% 60% at 90% 10%, rgba(255,99,146,0.15) 0%, rgba(255,99,146,0) 100%),
+        linear-gradient(180deg, var(--white) 0%, var(--bg) 100%);
+    }
+    .container{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .brand img.logo{
+      width:160px;
+      height:auto;
+    }
+    .badge-top{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      margin-left:12px;
+      padding:6px 10px;
+      border:1px solid #e2e8f0;
+      border-radius:12px;
+      background:#fff;
+      color:var(--muted);
+      font-size:.85rem;
+    }
+    .badge-top img.totopo{
+      width:18px;height:18px;object-fit:contain
+    }
+    main{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+    .hero{
+      width:100%;
+      max-width:780px;
+      background:#fff;
+      border:1px solid #e2e8f0;
+      border-radius:24px;
+      padding:28px;
+      box-shadow:0 10px 30px rgba(13,27,42,0.08);
+      text-align:center;
+    }
+    .hero h1{
+      margin:0 0 8px 0;
+      font-size:2rem;
+      color:var(--navy);
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+    .hero .subtitle{
+      color:var(--muted);
+      font-size:1rem;
+      margin-bottom:22px;
+    }
+    .hero .card-image{
+      width:100%;
+      max-width:360px;
+      margin:0 auto 18px;
+      aspect-ratio:1/1;
+      border-radius:18px;
+      border:1px solid #e2e8f0;
+      overflow:hidden;
+      box-shadow:0 6px 20px rgba(13,27,42,0.06);
+      background:linear-gradient(180deg, #fff 0%, #f7f7fb 100%);
+      display:flex;align-items:center;justify-content:center;
+    }
+    .hero .card-image img{
+      width:82%;height:82%;object-fit:contain
+    }
+    .hero p{
+      margin:0 auto;
+      max-width:600px;
+      font-size:1.05rem;
+      line-height:1.6;
+      color:var(--text);
+    }
+    .warning-box{
+      margin:0 auto 24px;
+      max-width:600px;
+      padding:16px;
+      background:#fff3cd;
+      border:1px solid #ffc107;
+      border-radius:12px;
+      color:#664d03;
+      font-weight:600;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .warning-box::before{
+      content:"⚠️";
+      font-size:1.3rem;
+      flex-shrink:0;
+    }
+    .steps-list{
+      margin:0 auto 24px;
+      max-width:600px;
+      padding:0;
+      list-style-position:inside;
+      text-align:left;
+    }
+    .steps-list li{
+      margin-bottom:12px;
+      color:var(--text);
+      font-size:0.95rem;
+    }
+    .steps-list a{
+      color:var(--rose);
+      text-decoration:none;
+      font-weight:600;
+      transition:color .2s ease;
+    }
+    .steps-list a:hover{
+      color:var(--rose-strong);
+      text-decoration:underline;
+    }
+    .cta{
+      margin-top:22px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:14px 22px;
+      background:var(--rose);
+      color:#fff;
+      text-decoration:none;
+      border-radius:14px;
+      font-weight:700;
+      box-shadow:0 10px 24px rgba(255,99,146,0.35);
+      transition:transform .08s ease, box-shadow .12s ease, background .12s ease;
+    }
+    .cta:hover{transform:translateY(-1px);background:var(--rose-strong)}
+    .cta:active{transform:translateY(0);background:var(--rose-dark)}
+    .cta img.totopo{width:22px;height:22px;object-fit:contain}
+    .legend{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    footer{
+      padding:16px;
+      text-align:center;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+    @media (max-width:420px){
+      .hero{padding:22px;border-radius:20px}
+      .brand img.logo{width:140px}
+      .hero h1{font-size:1.6rem}
+      .hero .card-image{max-width:300px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand" aria-label="Padiuxi">
+        <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAQACAYAAAB/HSuDAAAAAXNSR0IB2cksfwAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAl[...]
+        <div class="badge-top" aria-label="Beta pública">
+          <img class="totopo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjQAAAIkCAYAAAAJXbGYAAAAAXNSR0IB2cksfwAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAA[...]
+          <span>Beta pública</span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero" aria-label="Convocatoria de beta testers">
+        <h1>Padiuxi</h1>
+        <p class="subtitle">App móvil para preservar y difundir las lenguas indígenas de México.</p>
+        <div class="card-image">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjQAAAIkCAYAAAAJXbGYAAAAAXNSR0IB2cksfwAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEw[...]
+        </div>
+        <p>
+          Estamos buscando personas que quieran probar la app antes de su lanzamiento oficial.
+          Tu retroalimentación nos ayuda a mejorar la experiencia y el contenido para comunidades indígenas.
+        </p>
+        <div class="warning-box">
+          Antes de continuar debes unirte al grupo de testers.
+        </div>
+        <ol class="steps-list">
+          <li>Únete aquí → <a href="https://groups.google.com/g/padiuxi-testers/members?pli=1" target="_blank" rel="noopener noreferrer">https://groups.google.com/g/padiuxi-testers/members?pli=1</a></li>
+          <li>Espera unos minutos</li>
+          <li>Regresa y continúa</li>
+        </ol>
+        <a class="cta" href="https://play.google.com/apps/testing/com.padiuxi.app" target="_blank" rel="noopener noreferrer">
+          <span>Quiero ser beta tester</span>
+        </a>
+        <div class="legend">Android • Gratis • Acceso temprano</div>
+      </section>
+    </main>
+    <footer>
+      © Padiuxi · Contacto: padiuxi.team@gmail.com
+    </footer>
+  </div>
+</body>
+</html>
